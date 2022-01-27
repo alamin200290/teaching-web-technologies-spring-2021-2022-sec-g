@@ -1,0 +1,14 @@
+<students>
+	<student id="1" xyz="abc">
+		<first_name> Alamin </first_name>
+		<age> 12 </age>
+		<email> alamin@aiub.edu</email>
+		<cgpa value="2.5" />
+	</student>
+	<student id="2">
+		<first_name> xyz </first_name>
+		<age> 11 </age>
+		<email> </email>
+		<cgpa value="3.5" />
+	</student>
+</students>
