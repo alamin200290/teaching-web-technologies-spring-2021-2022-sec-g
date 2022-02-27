@@ -19,7 +19,7 @@ if(isset($_REQUEST['submit'])){
 			$abc = explode('|', $user);
 
 			if(trim($abc[1]) == $username && trim($abc[2]) == $password){
-				$_SESSION['status'] = "true";
+				//$_SESSION['status'] = "true";
 				setcookie('status', 'true', time()+300, '/');
 				header('location: ../views/home.php');
 			}

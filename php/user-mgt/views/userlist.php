@@ -1,5 +1,6 @@
 <?php 
 	require('header.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -23,36 +24,30 @@
 			<th>EMAIL</th>
 			<th>ACTION</th>
 		</tr>
+
+		<?php 
+
+			$file = fopen('../models/user.txt', 'r');
+
+			while(!feof($file)){ 
+				$user = fgets($file);
+				$userArray = explode("|", $user);
+		?>
 		<tr>
-			<td>1</td>
-			<td>Alamin</td>
-			<td>123</td>
-			<td>alamin@aiub.edu</td>
+			<td><?=$userArray[0]?></td>
+			<td><?=$userArray[1]?></td>
+			<td><?=$userArray[2]?></td>
+			<td><?=$userArray[3]?></td>
 			<td>
-				<a href="edit.php?id=1"> EDIT </a> |
-				<a href="delete.php"> DELETE </a>
+				<a href="edit.php?id=<?=$userArray[0]?>"> EDIT </a> |
+				<a href="delete.php?id=<?=$userArray[0]?>"> DELETE </a>
 			</td>
 		</tr>
-		<tr>
-			<td>2</td>
-			<td>Alamin</td>
-			<td>567</td>
-			<td>xyz@aiub.edu</td>
-			<td>
-				<a href="edit.php?id=2"> EDIT </a> |
-				<a href="delete.php"> DELETE </a>
-			</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>XYZ</td>
-			<td>234</td>
-			<td>xyz@aiub.edu</td>
-			<td>
-				<a href="edit.php?id=3"> EDIT </a> |
-				<a href="delete.php"> DELETE </a>
-			</td>
-		</tr>
+
+		<?php 
+			}
+		?>
+		
 	</table>
 </body>
 </html>
