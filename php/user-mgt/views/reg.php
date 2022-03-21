@@ -3,7 +3,7 @@
 	<title>Signup</title>
 </head>
 <body>
-	<form method="POST" action="regCheck.php">
+	<form method="POST" action="../controllers/regCheck.php">
 		<table>
 			<tr>
 				<td>Username</td>

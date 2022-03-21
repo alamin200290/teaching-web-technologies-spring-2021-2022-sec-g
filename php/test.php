@@ -1,5 +1,14 @@
 <?php
 
+	if(isset($_REQUEST['submit'])){
+		
+		if($_REQUEST['username'] == null){
+			echo "invalid username!";
+		}else{
+			echo "ok";
+		}
+	}
+
 	//print("Hello from PHP");
 
 	/*$name = "alamin";
@@ -56,7 +65,7 @@
 	
 	}*/
 
-	foreach ($students as $s) {
+	/*foreach ($students as $s) {
 		echo "<h1>".$s['email']."|".$s['name']."</h1>";
-	}
+	}*/
 ?>

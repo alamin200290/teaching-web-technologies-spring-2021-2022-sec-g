@@ -1,13 +1,51 @@
 <?php 
-	//session_start();
-	//print_r($_SESSION);
+
+	$error = "";
+
+	if(isset($_GET['msg'])){
+		if($_GET['msg'] == 'error'){
+			$error = "Invaild username/password";
+		}
+	}
 ?>
 
 <html>
 <head>
 	<title>login</title>
+
+	<style type="text/css">
+		body{
+			background: yellow;
+		}
+
+		h1{
+			color: green;
+		}
+
+		#another{
+			color: red;
+		}
+
+		#d1{
+			background: red;
+			width: 100px;
+			height: 100px;
+			border-radius: 50px;
+
+		}
+	</style>
 </head>
+
 <body>
+
+	<h1 id='first'>Login Page</h1>
+	<h1 id='another'>Login Page2</h1>
+
+	<div id="d1">
+		test
+	</div>
+
+
 	<form method="POST" action="../controllers/loginCheck.php">
 		<table>
 			<tr>
@@ -26,6 +64,11 @@
 				<td></td>
 				<td>
 					<input type="submit" name="submit" value="Submit">
+					<a href="reg.php"> Signup </a>
+					<br>
+					<br>
+					<?=$error?>
+
 				</td>
 			</tr>
 		</table>

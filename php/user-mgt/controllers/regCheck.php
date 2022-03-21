@@ -1,5 +1,7 @@
 <?php 
 session_start();
+require('../models/userModel.php');
+
 
 if(isset($_REQUEST['submit'])){
 	
@@ -12,11 +14,18 @@ if(isset($_REQUEST['submit'])){
 		//$user = ['username'=> $username, 'password'=>$password, 'email'=>$email];
 		//$_SESSION['user'] = $user;
 
-		$user = $username."|".$password."|".$email;
+		/*$user = $username."|".$password."|".$email;
 		$file = fopen('user.txt', 'w');
-		fwrite($file, $user);
+		fwrite($file, $user);*/
+
+		$status = signup($username, $password, $email);
 		
-		header('location: login.php');
+		if($status){
+			header('location: ../views/login.php');
+		}else{
+			header('location: ../views/reg.php');
+		}
+
 
 	}else{
 		echo "null submission ....";
